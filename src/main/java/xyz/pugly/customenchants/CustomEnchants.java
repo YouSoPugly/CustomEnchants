@@ -2,7 +2,6 @@ package xyz.pugly.customenchants;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.pugly.customenchants.core.rarities.Rarities;
-import xyz.pugly.customenchants.core.triggers.Triggers;
 import xyz.pugly.customenchants.utils.Message;
 
 public final class CustomEnchants extends JavaPlugin {
@@ -13,7 +12,6 @@ public final class CustomEnchants extends JavaPlugin {
 
         Message.reload();
         Rarities.reload();
-        Triggers.reload();
 
     }
 

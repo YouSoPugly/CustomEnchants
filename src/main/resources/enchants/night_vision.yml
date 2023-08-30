@@ -16,4 +16,5 @@ effects:
     particles: false # This is whether or not the effect will have particles
     chance: 1 # This is the chance of the potion being applied from 0-1
     effect: night_vision # This is the effect that will be applied. Valid effects are found at https://minecraft.fandom.com/wiki/Effect
+    delay: 10 # This is the delay in seconds before the effect is applied again
     trigger: repeating # This is the trigger type, valid triggers are repeating (with a delay defined), on_hit (with a target), on_damage (with a target), on_break, on_xp_gain

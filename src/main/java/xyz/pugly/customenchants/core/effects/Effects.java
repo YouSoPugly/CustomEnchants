@@ -6,13 +6,14 @@ import java.util.Map;
 public class Effects {
 
     //TODO: Add effects
-    // potion_effect
+    // potion_effect DONE
     // vein_miner
     // xp_boost
     // auto_smelt
     // durability
     // hunger
     // health
+    // explosion DONE
 
     private static final Map<String, Effect> effects = new HashMap<>();
 
@@ -25,5 +26,4 @@ public class Effects {
     public static Effect get(String id) {
         return effects.get(id);
     }
-
 }
