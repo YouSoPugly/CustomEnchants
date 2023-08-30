@@ -1,0 +1,10 @@
+display_name: "Vein Miner"
+description: "Breaks all similar blocks in a %level% radius"
+type: tool
+rarity: mythical
+max_level: 5
+item: DIAMOND_PICKAXE
+effects:
+  - id: vein_miner
+    radius: %level%
+    trigger: on_break

@@ -1,0 +1,4 @@
+name: CustomEnchants
+version: '1.0'
+main: xyz.pugly.customenchants.CustomEnchants
+api-version: '1.18'

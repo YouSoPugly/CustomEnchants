@@ -1,0 +1,21 @@
+# Rarity id is the name of the section
+# Rarity name is the displayed name of the rarity
+# Rarity color is the color of the rarity, in minimessage format
+
+
+rarities:
+    common:
+        name: Common
+        color: '<#FFFFFF>'
+    rare:
+        name: Rare
+        color: '<#55FF55>'
+    epic:
+        name: Epic
+        color: '<#5555FF>'
+    legendary:
+        name: Legendary
+        color: '<#FF55FF>'
+    mythic:
+        name: Mythic
+        color: '<#FFAA00>'

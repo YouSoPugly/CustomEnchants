@@ -1,0 +1,10 @@
+name: "XP Boost"
+description: "Gives you a {20*%level%} percent chance to get double xp"
+type: held
+rarity: mythical
+max_level: 5
+item: BOOK
+effects:
+  - id: xp_boost
+    chance: 20*%level%
+    trigger: on_xp_gain
