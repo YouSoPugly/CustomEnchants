@@ -9,9 +9,10 @@ import java.util.Map;
 import static xyz.pugly.customenchants.core.effects.Effect.*;
 
 public class ExplosionEffect extends Effect {
-    public ExplosionEffect(String id) {
-        super(id);
+    public ExplosionEffect() {
+        super("explosion");
     }
+
 
     public void apply(Player p, Map<String, Object> data, int level) {
         try {

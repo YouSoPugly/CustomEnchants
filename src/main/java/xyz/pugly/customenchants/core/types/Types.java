@@ -38,10 +38,6 @@ public class Types {
             Message.warn(Message.TYPE_CONFIG_INCORRECT);
             return;
         }
-
-
-
-
     }
 
 }

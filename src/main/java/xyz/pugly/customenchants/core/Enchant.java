@@ -31,13 +31,17 @@ import org.bukkit.Material;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.jetbrains.annotations.NotNull;
+import org.yaml.snakeyaml.Yaml;
 import xyz.pugly.customenchants.core.effects.Effect;
 import xyz.pugly.customenchants.core.effects.Effects;
+import xyz.pugly.customenchants.core.rarities.Rarities;
 import xyz.pugly.customenchants.core.rarities.Rarity;
 import xyz.pugly.customenchants.core.triggers.Trigger;
 import xyz.pugly.customenchants.core.types.Type;
+import xyz.pugly.customenchants.core.types.Types;
 import xyz.pugly.customenchants.utils.Message;
 
+import java.io.File;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
@@ -52,6 +56,21 @@ public class Enchant {
     private Material item;
     private Map<Effect, Map<String, Object>> effects;
     private Trigger trigger;
+
+    public Enchant(File f) {
+        String id = f.getName().toLowerCase().replace(".yml", "");
+        YamlConfiguration config = YamlConfiguration.loadConfiguration(f);
+
+        this.id = id;
+        this.displayName = config.getString("display-name");
+        this.description = config.getString("description");
+//        this.type = Types.get(config.getString("type"));
+        this.rarity = Rarities.get(config.getString("rarity"));
+        this.maxLevel = config.getInt("max-level");
+        this.item = Material.valueOf(config.getString("item"));
+
+        parseEffects(config.getConfigurationSection("effects"));
+    }
 
     public Enchant(String id, String displayName, String description, Type type, Rarity rarity, int maxLevel, Material item, ConfigurationSection effects) {
         this.id = id;

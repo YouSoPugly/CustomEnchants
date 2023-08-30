@@ -26,4 +26,11 @@ public class Effects {
     public static Effect get(String id) {
         return effects.get(id);
     }
+
+    public static void reload() {
+        effects.clear();
+        new PotionEffect();
+        new XPBoostEffect();
+        new ExplosionEffect();
+    }
 }

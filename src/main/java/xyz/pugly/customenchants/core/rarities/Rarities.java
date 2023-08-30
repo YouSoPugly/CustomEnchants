@@ -48,4 +48,8 @@ public class Rarities {
 
     }
 
+    public static Rarity get(String id) {
+        return rarities.get(id);
+    }
+
 }
