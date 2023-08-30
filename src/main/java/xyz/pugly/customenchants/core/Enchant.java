@@ -28,11 +28,19 @@ effects:
 
 
 import org.bukkit.Material;
+import org.bukkit.configuration.ConfigurationSection;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.jetbrains.annotations.NotNull;
 import xyz.pugly.customenchants.core.effects.Effect;
+import xyz.pugly.customenchants.core.effects.Effects;
 import xyz.pugly.customenchants.core.rarities.Rarity;
+import xyz.pugly.customenchants.core.triggers.Trigger;
 import xyz.pugly.customenchants.core.types.Type;
+import xyz.pugly.customenchants.utils.Message;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
 
 public class Enchant {
     private String id;
@@ -42,9 +50,10 @@ public class Enchant {
     private Rarity rarity;
     private int maxLevel;
     private Material item;
-    private Collection<Effect> effects;
+    private Map<Effect, Map<String, Object>> effects;
+    private Trigger trigger;
 
-    public Enchant(String id, String displayName, String description, Type type, Rarity rarity, int maxLevel, Material item, Collection<Effect> effects) {
+    public Enchant(String id, String displayName, String description, Type type, Rarity rarity, int maxLevel, Material item, ConfigurationSection effects) {
         this.id = id;
         this.displayName = displayName;
         this.description = description;
@@ -52,7 +61,22 @@ public class Enchant {
         this.rarity = rarity;
         this.maxLevel = maxLevel;
         this.item = item;
-        this.effects = effects;
+
+        parseEffects(effects);
+    }
+
+    private void parseEffects(ConfigurationSection effects) {
+        @NotNull List<Map<?, ?>> effectList = effects.getMapList("effects");
+
+        for (Map<?,?> m : effectList) {
+
+            if (m.get("id") == null) {
+                Message.error("Missing effect ID for enchant: " + id);
+                continue;
+            }
+
+            this.effects.put(Effects.get((String) m.get("id")), (Map<String, Object>) m);
+        }
     }
 
     public String getID() {
@@ -83,7 +107,7 @@ public class Enchant {
         return item;
     }
 
-    public Collection<Effect> getEffects() {
+    public Map<Effect, Map<String, Object>> getEffects() {
         return effects;
     }
 }

@@ -4,7 +4,7 @@ type: held
 rarity: mythical
 max_level: 5
 item: BOOK
+trigger: on_xp_gain
 effects:
   - id: xp_boost
     chance: 20*%level%
-    trigger: on_xp_gain

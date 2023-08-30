@@ -4,9 +4,9 @@ type: boots
 rarity: rare
 max_level: 1
 item: TNT
+trigger: on_death
 effects:
   - id: explosion
     power: 3
     break_blocks: false
     chance: 1
-    trigger: on_death

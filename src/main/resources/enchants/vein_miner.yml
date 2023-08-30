@@ -4,7 +4,7 @@ type: tool
 rarity: mythical
 max_level: 5
 item: DIAMOND_PICKAXE
+trigger: on_break
 effects:
   - id: vein_miner
     radius: %level%
-    trigger: on_break

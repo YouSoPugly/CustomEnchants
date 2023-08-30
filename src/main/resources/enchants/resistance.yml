@@ -4,6 +4,7 @@ type: armor
 rarity: mythical
 max_level: 2
 item: IRON_CHESTPLATE
+trigger: on_damage
 effects:
   - id: potion_effect
     duration: 3
@@ -12,4 +13,3 @@ effects:
     effect: resistance
     chance: 0.05
     target: victim # This is the target of the effect, valid targets are victim & attacker
-    trigger: on_damage

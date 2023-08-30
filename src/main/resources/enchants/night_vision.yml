@@ -6,8 +6,11 @@ type: armor # This is the type of enchantment. Valid types are found in types.ym
 rarity: common # This is the rarity of the enchantment. Valid rarities are found in rarities.yml
 max-level: 1 # This is the maximum level of the enchantment
 item: GOLDEN_CARROT # This is the item that will be displayed in the list of enchants
+trigger: repeating # This is the trigger type, valid triggers are repeating (with a delay defined), on_hit (with a target), on_damage (with a target), on_break, on_xp_gain
+delay: 10 # This is the delay in seconds before the effect is applied again
 
-# This is the list of effects that will be applied with triggers,
+
+# This is the list of effects that will be applied on trigger,
 # if you do not want any effects, you can remove this section entirely
 effects:
   - id: potion_effect
@@ -16,5 +19,3 @@ effects:
     particles: false # This is whether or not the effect will have particles
     chance: 1 # This is the chance of the potion being applied from 0-1
     effect: night_vision # This is the effect that will be applied. Valid effects are found at https://minecraft.fandom.com/wiki/Effect
-    delay: 10 # This is the delay in seconds before the effect is applied again
-    trigger: repeating # This is the trigger type, valid triggers are repeating (with a delay defined), on_hit (with a target), on_damage (with a target), on_break, on_xp_gain

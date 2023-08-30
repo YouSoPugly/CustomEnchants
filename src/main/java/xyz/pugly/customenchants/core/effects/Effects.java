@@ -8,7 +8,7 @@ public class Effects {
     //TODO: Add effects
     // potion_effect DONE
     // vein_miner
-    // xp_boost
+    // xp_boost DONE
     // auto_smelt
     // durability
     // hunger
