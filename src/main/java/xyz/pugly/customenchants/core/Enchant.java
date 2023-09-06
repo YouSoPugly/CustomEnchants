@@ -1,5 +1,7 @@
 package xyz.pugly.customenchants.core;
 
+//TODO: Change this to a Record
+
 /*
 Example Enchant Config:
 
